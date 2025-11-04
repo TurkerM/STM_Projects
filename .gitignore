@@ -1,0 +1,78 @@
+
+# ============================================================
+# STM32CubeIDE / STM32CubeMX Git Ignore (Full STM Project)
+# ============================================================
+
+# === Build outputs ===
+/Debug/
+/Release/
+/build/
+/Build/
+
+# === Object files ===
+*.o
+*.obj
+*.d
+*.map
+*.lst
+*.dep
+*.elf
+*.bin
+*.hex
+*.out
+*.a
+*.su
+*.axf
+
+# === IDE metadata ===
+/.metadata/
+/.settings/
+*.launch
+*.log
+*.tmp
+
+# === OS-specific files ===
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+# Linux / caches
+.cache/
+*.swp
+*.swo
+
+# === User temporary files ===
+*.bak
+*.old
+*.tmp
+*.orig
+
+# === Editor configurations ===
+.vscode/
+.idea/
+
+# === Middlewares ===
+/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_*.c
+
+# === CubeMX configuration ===
+# .ioc dosyası tutulur, çünkü projeyi yeniden üretmekte işe yarar.
+# Eğer tutmak istemiyorsan alt satırı aç:
+# *.ioc
+
+# === Allow source and config files ===
+!Core/
+!Drivers/
+!Inc/
+!Src/
+!.gitignore
+!*.ioc
+!*.ld
+!README.md
+
+# ============================================================
+# End of file
+# ============================================================
