@@ -26,3 +26,6 @@ Example: Uses TIM2 timer to make the LED blink at 0.5-second intervals.
 This project **may not work directly on every STM32 board**.  
 - Users should check their board's pin and clock configuration.  
 - Timer and UART settings may vary across different boards.
+
+![LED](https://github.com/user-attachments/assets/710c9fa5-2b72-4605-88e1-c693dc9e1a2a)
+
