@@ -103,9 +103,6 @@ int main(void)
 			  last_time = HAL_GetTick();
 		  }
 	  }
-	  else{
-		  last_time = 0;
-	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
