@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Led
+BUILD_ARTIFACT_NAME := SimpleServoControl
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Led.elf \
+SimpleServoControl.elf \
 
 MAP_FILES += \
-Led.map \
+SimpleServoControl.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Led.list \
+SimpleServoControl.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Led.elf secondary-outputs
+main-build: SimpleServoControl.elf secondary-outputs
 
 # Tool invocations
-Led.elf Led.map: $(OBJS) $(USER_OBJS) C:\Users\turke\STM32CubeIDE\workspace_1.19.0\STM_Projects\Led\STM32F302R8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Led.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\turke\STM32CubeIDE\workspace_1.19.0\STM_Projects\Led\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Led.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+SimpleServoControl.elf SimpleServoControl.map: $(OBJS) $(USER_OBJS) C:\Users\turke\STM32CubeIDE\workspace_1.19.0\SimpleServoControl\STM32F302R8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "SimpleServoControl.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\turke\STM32CubeIDE\workspace_1.19.0\SimpleServoControl\STM32F302R8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SimpleServoControl.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Led.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Led.list"
+SimpleServoControl.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "SimpleServoControl.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Led.elf Led.list Led.map default.size.stdout
+	-$(RM) SimpleServoControl.elf SimpleServoControl.list SimpleServoControl.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
